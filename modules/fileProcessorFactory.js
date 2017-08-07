@@ -1,7 +1,6 @@
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var common = require('../common/common');
-var dateFormat = require('dateformat');
 
 function FileProcessorFactory() {
     'use strict';

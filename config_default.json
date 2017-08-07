@@ -1,9 +1,13 @@
 {
-    "mode": null,
+    "mode": "write",
     "path": "./cache/",
     "host": "local.gen7.talkdev.co.uk",
     "protocol": "https:",
     "queryMatch": false,
     "emulateRspTime": false,
-    "portToUrlMap": null
+    "portToUrlMap": {
+        "1111": {
+            "host": "https://sales.gen7.talkdev.co.uk"
+        }
+    }
 }

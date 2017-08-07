@@ -1,4 +1,5 @@
 var url = require('url');
+var http = require('http');
 var https = require('https');
 var querystring = require('querystring');
 var FileProcessorFactory = require('./FileProcessorFactory');
@@ -7,7 +8,9 @@ function ProxyProcessorFactory() {
     'use strict';
     this.create = function (config) {
         function ProxyProcessor() {
-            var logger = FileProcessorFactory.create(config);
+            //var logger = FileProcessorFactory.create(config);
+            var logger = null;
+
 
             this.finishStream = function () {
                 logger.close();
@@ -43,18 +46,25 @@ function ProxyProcessorFactory() {
                 body: req.body,
             };
             //console.log(reqOpts.method + ' ' + reqOpts.hostname + reqOpts.path);
+            //console.log("REQUEST: " + JSON.stringify(reqOpts, null, 2) + "\n");
 
             var proxyReq = https.request(reqOpts, function (proxyRes) {
-                var data = '';
+                var data;
                 proxyRes.on('data', function (d) {
-                    data += d;
+                    if(!data) {
+                        data = Buffer.from(d);
+                    } else {
+                        data = Buffer.concat([data, d]);
+                    }
+                    //console.log(d);
                 });
                 proxyRes.on('end', function () {
                     logObj.statusCode = proxyRes.statusCode;
                     logObj.headers = proxyRes.headers;
                     logObj.response = data;
                     logObj.rspTime = new Date().getTime() - logObj.timestamp;
-                    logger.writeReqBlock(JSON.stringify(logObj));
+                    //console.log(JSON.stringify(logObj, null, 2) + "\n");
+                    //logger.writeReqBlock(JSON.stringify(logObj));
                     res.writeHead(proxyRes.statusCode, createRspHeaders(proxyRes.headers, config));
                     res.end(data);
                 });
@@ -81,7 +91,7 @@ function ProxyProcessorFactory() {
 
     function buildReqOptions(origReq, config) {
         var proxiedPath = url.parse(origReq.url, true).path;
-        var skipHeaders = ['host'];
+        var skipHeaders = [];
 
         var newConf = {
             hostname: config.target,
@@ -108,6 +118,9 @@ function ProxyProcessorFactory() {
             newConf.headers['content-length'] = Buffer.byteLength(origReq.body);
         }
 
+        newConf.headers['host'] = url.parse(config.target, true).host;
+        //newConf.headers['accept'] = '*/*';
+
         return newConf;
     }
 
@@ -121,6 +134,7 @@ function ProxyProcessorFactory() {
             }
         }
 
+        newHeaders['x-frame-options'] = 'ALLOW-FROM https://local.gen7.talkdev.co.uk:4200';
         newHeaders['access-control-allow-credentials'] = 'true';
         newHeaders['access-control-allow-origin'] = url.format({
             host: config.host,

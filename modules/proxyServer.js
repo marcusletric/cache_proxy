@@ -3,9 +3,9 @@ var fs = require('fs');
 var proxyProcessorFactory = require('./proxyProcessorFactory');
 
 var sslOptions = {
-    key: fs.readFileSync('../conf/ssl/local.gen7.talkdev.co.uk.key', 'utf8'),
-    cert: fs.readFileSync('../conf/ssl/local.gen7.talkdev.co.uk.crt', 'utf8'),
-    ca: fs.readFileSync('../conf/ssl/ca.crt', 'utf8'),
+    key: fs.readFileSync('conf/ssl/local.gen7.talkdev.co.uk.key', 'utf8'),
+    cert: fs.readFileSync('conf/ssl/local.gen7.talkdev.co.uk.crt', 'utf8'),
+    ca: fs.readFileSync('conf/ssl/ca.crt', 'utf8'),
 };
 
 function proxyServer(config) {
