@@ -1,0 +1,9 @@
+{
+    "mode": null,
+    "path": "./cache/",
+    "host": "local.gen7.talkdev.co.uk",
+    "protocol": "https:",
+    "queryMatch": false,
+    "emulateRspTime": false,
+    "portToUrlMap": null
+}
