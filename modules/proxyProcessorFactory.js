@@ -8,8 +8,8 @@ function ProxyProcessorFactory() {
     'use strict';
     this.create = function (config) {
         function ProxyProcessor() {
-            //var logger = FileProcessorFactory.create(config);
-            var logger = null;
+            var logger = FileProcessorFactory.create(config);
+            //var logger = null;
 
 
             this.finishStream = function () {
@@ -64,7 +64,7 @@ function ProxyProcessorFactory() {
                     logObj.response = data;
                     logObj.rspTime = new Date().getTime() - logObj.timestamp;
                     //console.log(JSON.stringify(logObj, null, 2) + "\n");
-                    //logger.writeReqBlock(JSON.stringify(logObj));
+                    logger.writeReqBlock(JSON.stringify(logObj));
                     res.writeHead(proxyRes.statusCode, createRspHeaders(proxyRes.headers, config));
                     res.end(data);
                 });
@@ -84,7 +84,7 @@ function ProxyProcessorFactory() {
                 res.end('Offline proxy data error');
             } else {
                 res.writeHead(logEntry.statusCode, createRspHeaders(logEntry.headers, config));
-                res.end(logEntry.response);
+                res.end(Buffer.from(logEntry.response));
             }
         }
     }
@@ -134,7 +134,7 @@ function ProxyProcessorFactory() {
             }
         }
 
-        newHeaders['x-frame-options'] = 'ALLOW-FROM https://local.gen7.talkdev.co.uk:4200';
+        newHeaders['x-frame-options'] = 'ALLOW-FROM *.talkdev.co.uk';
         newHeaders['access-control-allow-credentials'] = 'true';
         newHeaders['access-control-allow-origin'] = url.format({
             host: config.host,

@@ -7,7 +7,10 @@
     "emulateRspTime": false,
     "portToUrlMap": {
         "1111": {
-            "host": "https://sales.gen7.talkdev.co.uk"
+            "host": "www.google.co.uk"
+        },
+        "1112": {
+            "host": "www.google.co.uk"
         }
     }
 }

@@ -1,4 +1,5 @@
 var https = require('https');
+var http = require('http');
 var fs = require('fs');
 var proxyProcessorFactory = require('./proxyProcessorFactory');
 
@@ -15,7 +16,8 @@ function proxyServer(config) {
     this.proxyProcessor = proxyProcessorFactory.create(config);
 
     this.start = function () {
-        this.server = https.createServer(sslOptions, this.proxyProcessor.handler).listen(config.port, config.host, listenCallback);
+        //this.server = https.createServer(sslOptions, this.proxyProcessor.handler).listen(config.port, config.host, listenCallback);
+        this.server = http.createServer(this.proxyProcessor.handler).listen(config.port, config.host, listenCallback);
     };
 
     this.setCallback = function (callback) {
