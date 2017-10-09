@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de430fb3-6b24-40ad-a718-aa9818a4851c" name="Default" comment="">
+    <list default="true" id="de430fb3-6b24-40ad-a718-aa9818a4851c" name="Default" comment=" - Bugfix for missing port in request config">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_default.json" afterPath="$PROJECT_DIR$/config_default.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/proxyProcessorFactory.js" afterPath="$PROJECT_DIR$/modules/proxyProcessorFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/proxyServer.js" afterPath="$PROJECT_DIR$/modules/proxyServer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,18 +25,18 @@
       <file leaf-file-name="proxyServer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/proxyServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="19" column="87" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="proxyProcessorFactory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="proxyProcessorFactory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/proxyProcessorFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="97" column="30" lean-forward="true" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -46,8 +45,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="157" column="52" lean-forward="false" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
+            <state relative-caret-position="272">
+              <caret line="157" column="27" lean-forward="false" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -73,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config_default.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config_default.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_default.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -109,6 +108,7 @@
     <findStrings>
       <find>dateFormat</find>
       <find>console.log</find>
+      <find>port</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -124,8 +124,9 @@
         <option value="$PROJECT_DIR$/modules/proxyServer.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/cache/www.google.co.uk.json" />
-        <option value="$PROJECT_DIR$/modules/proxyProcessorFactory.js" />
         <option value="$PROJECT_DIR$/config_default.json" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/modules/proxyProcessorFactory.js" />
       </list>
     </option>
   </component>
@@ -307,7 +308,7 @@
       <workItem from="1502188247662" duration="2663000" />
       <workItem from="1502354556204" duration="244000" />
       <workItem from="1502442535162" duration="233000" />
-      <workItem from="1507562364473" duration="1785000" />
+      <workItem from="1507562364473" duration="3942000" />
     </task>
     <task id="LOCAL-00001" summary=" - Bugfix for data buffer&#10; - Remove unnecesary dependency&#10; - Altering for response header injection">
       <created>1502123754580</created>
@@ -316,17 +317,24 @@
       <option name="project" value="LOCAL" />
       <updated>1502123754580</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=" - Bugfix for data buffer">
+      <created>1507564379278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1507564379278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13154000" />
+    <option name="totallyTimeSpent" value="15311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2477396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2477396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -353,7 +361,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=" - Bugfix for data buffer&#10; - Remove unnecesary dependency&#10; - Altering for response header injection" />
-    <option name="LAST_COMMIT_MESSAGE" value=" - Bugfix for data buffer&#10; - Remove unnecesary dependency&#10; - Altering for response header injection" />
+    <MESSAGE value=" - Bugfix for data buffer" />
+    <option name="LAST_COMMIT_MESSAGE" value=" - Bugfix for data buffer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -568,30 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/proxyEnvGen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/proxyServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="157" column="52" lean-forward="false" selection-start-line="157" selection-start-column="52" selection-end-line="157" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/fileProcessorFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
@@ -600,10 +585,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/proxyProcessorFactory.js">
+    <entry file="file://$PROJECT_DIR$/cache/www.google.co.uk.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+        <state relative-caret-position="688">
+          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/proxyEnvGen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -616,10 +609,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cache/www.google.co.uk.json">
+    <entry file="file://$PROJECT_DIR$/modules/proxyServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="3" column="58" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="58" />
+        <state relative-caret-position="323">
+          <caret line="19" column="87" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="157" column="27" lean-forward="false" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/proxyProcessorFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="97" column="30" lean-forward="true" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
           <folding />
         </state>
       </provider>

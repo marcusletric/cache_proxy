@@ -43,7 +43,7 @@ function ProxyProcessorFactory() {
                 timestamp: (new Date().getTime()),
                 method: req.method,
                 url: req.url,
-                body: req.body,
+                body: req.body
             };
             //console.log(reqOpts.method + ' ' + reqOpts.hostname + reqOpts.path);
             //console.log("REQUEST: " + JSON.stringify(reqOpts, null, 2) + "\n");
@@ -97,6 +97,7 @@ function ProxyProcessorFactory() {
             hostname: config.target,
             path: proxiedPath,
             method: origReq.method,
+            port: config.proxiedPort,
             rejectUnauthorized: false,
         };
 

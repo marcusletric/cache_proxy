@@ -155,6 +155,7 @@ function startProxies(config, callback) {
         if (typeof port === 'string') {
             var serverConf = extend({
                 port: port,
+                proxiedPort: config.portToUrlMap[port].port,
                 target: config.portToUrlMap[port].host,
                 file: config.portToUrlMap[port].file,
             }, config);
