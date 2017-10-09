@@ -165,7 +165,7 @@ function startProxies(config, callback) {
             serverInstance.setCallback(servingStarted);
             serverInstance.start();
             serversStarted.push(serverInstance);
-            console.log(config.portToUrlMap[serverConf.port].host + '\nproxied to:\n' + serverConf.host + ':' + serverConf.port + '\n________________________________\n');
+            console.log(config.portToUrlMap[serverConf.port].host + ':' + serverConf.proxiedPort + '\nproxied to:\n' + serverConf.host + ':' + serverConf.port + '\n________________________________\n');
         }
     }
 
